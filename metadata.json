@@ -1,0 +1,8 @@
+{
+  "name": "HYPER Network",
+  "description": "Privacy-First AI Safety Infrastructure for Continuous Care",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
