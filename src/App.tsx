@@ -944,8 +944,32 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-44 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden w-full bg-white">
+        {/* Typographic Edge Watermark Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden opacity-[0.06]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220vw] h-[220vh] rotate-[-5deg] flex flex-col justify-center items-center">
+            {Array.from({ length: 300 }).map((_, i) => (
+              <div key={i} className={`whitespace-nowrap flex w-full tracking-tighter mix-blend-multiply transition-transform ${i % 2 === 0 ? '-translate-x-20' : 'translate-x-20'}`} style={{ lineHeight: '0.85' }}>
+                <span className={`flex-shrink-0 ${
+                  i % 5 === 0 ? 'text-sm md:text-base font-serif italic tracking-wider font-bold text-slate-900 uppercase' : 
+                  i % 4 === 0 ? 'text-xs md:text-sm font-black font-sans tracking-tight text-transparent uppercase' :
+                  i % 3 === 0 ? 'text-[10px] md:text-xs font-serif font-medium tracking-normal text-slate-800' :
+                  i % 2 === 0 ? 'text-sm md:text-base font-black font-sans tracking-tighter text-slate-900 uppercase' :
+                  'text-xs md:text-sm font-serif italic font-semibold text-slate-700'
+                }`} style={i % 4 === 0 ? { WebkitTextStroke: '0.5px #0f172a' } : {}}>
+                  {Array.from({ length: 50 }).map((_, j) => (
+                    i % 2 === 0 
+                      ? "HYPER NETWORK • THE DAILY JOURNAL • ADVANCED SENSING • " 
+                      : (i % 3 === 0 ? "The architecture of care requires zero compromise on privacy. " : "NEXT GEN CARE • VOL. I • HYPER NETWORK • ")
+                  )).join("")}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -986,11 +1010,12 @@ export default function App() {
             </div>
           </motion.div>
         </div>
+        </div>
       </section>
 
       {/* Problem Section */}
       <section id="about" className="py-24 bg-white border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -1095,12 +1120,12 @@ export default function App() {
               </div>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* NEW SECTION: Clinical-Grade Technical Deep-Dive Showcase */}
       <section id="pipeline" className="py-24 bg-slate-100 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-2">
               Clinical-Grade Technology & Radar-sLLM Pipeline
@@ -1379,12 +1404,12 @@ export default function App() {
               <RadarCoveragePlanner />
             </motion.div>
           )}
-        </div>
+        </motion.div>
       </section>
 
       {/* Global Strategy */}
       <section id="global" className="py-24 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -1495,12 +1520,12 @@ export default function App() {
               </div>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Validation */}
       <section id="validation" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-2">Proven in Real-World Environments</h2>
             <p className="text-blue-600 font-semibold mb-6">실제 시니어 요양 기관 다수 적용 성공 사례</p>
@@ -1534,22 +1559,22 @@ export default function App() {
               <p className="text-sm text-slate-500 font-semibold">95% 의료 전문가 및 간호 관계자 신뢰도 입증</p>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Next Generation TI mmWave Radar Technology */}
       <section className="py-24 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-center mb-16">
             <div className="lg:w-5/12">
               <span className="text-blue-600 font-bold tracking-wider text-xs md:text-sm uppercase mb-3 block">Underlying Hardware Technology</span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Powered by Texas Instruments 60/77GHz mmWave</h2>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">Powered by 60/77GHz mmWave</h2>
               <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
                 Our sensors utilize bleeding-edge TI FMCW (Frequency-Modulated Continuous Wave) radar technology integrated with advanced MIMO (Multiple Input, Multiple Output) antenna arrays. 
                 This enables sub-millimeter precision tracking of human positions, postures, and vitals entirely without optical cameras.
               </p>
               <p className="text-slate-500 text-xs md:text-sm font-medium mb-6">
-                텍사스 인스트루먼트(TI)사의 최첨단 60GHz 및 77GHz 고해상도 FMCW 레이더 칩을 채택하여, 광학 렌즈 없이도 밀리미터 단위의 정밀한 심박 및 호흡 측정이 가능합니다.
+                최첨단 60GHz 및 77GHz 고해상도 FMCW 레이더 칩을 채택하여, 광학 렌즈 없이도 밀리미터 단위의 정밀한 심박 및 호흡 측정이 가능합니다.
               </p>
               
               <div className="flex flex-col gap-4">
@@ -1615,12 +1640,12 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* End-to-End Privacy Architecture */}
       <section id="privacy" className="py-24 bg-slate-50 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-blue-600 font-bold tracking-wider text-xs md:text-sm uppercase mb-3 block">Data Pipeline & Security</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">End-to-End Privacy-Preserving Architecture</h2>
@@ -1705,12 +1730,12 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Enterprise Deployment Scenarios */}
       <section className="py-24 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-center mb-16">
             <div className="lg:w-1/2">
               <span className="text-blue-600 font-bold tracking-wider text-xs md:text-sm uppercase mb-3 block">Enterprise Integration</span>
@@ -1782,12 +1807,12 @@ export default function App() {
               <span className="text-xs font-bold text-slate-400 uppercase">독거노인 자택 방문 관리망</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Regulatory Readiness */}
       <section className="py-24 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2">Regulatory & Compliance Readiness</h2>
             <p className="text-blue-600 font-medium mb-6">규제 및 컴플라이언스 완벽 대비</p>
@@ -1832,12 +1857,12 @@ export default function App() {
               <p className="text-xs text-slate-500">의료 환경 적합성</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Competitive Landscape */}
       <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2">Competitive Landscape</h2>
             <p className="text-blue-600 font-medium mb-6">경쟁 환경 및 차별성</p>
@@ -1887,7 +1912,7 @@ export default function App() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Deep Tech Showcase Section */}
@@ -1895,7 +1920,7 @@ export default function App() {
 
       {/* CTA / Footer */}
       <footer id="contact" className="bg-slate-900 py-20 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Ready to transform your care infrastructure?</h2>
             <p className="text-slate-400 text-sm md:text-base mb-4">차세대 비접촉 무선 레이더 센서 기반 대단위 돌봄 안전 보호 솔루션을 도입해보세요.</p>
@@ -1913,7 +1938,7 @@ export default function App() {
             <p>© {new Date().getFullYear()} HYPER Network Co., Ltd. All rights reserved.</p>
             <p className="text-slate-600">Seoul, South Korea | 한양대학교 기술지주회사 투자 유치사</p>
           </div>
-        </div>
+        </motion.div>
       </footer>
     </div>
   );
