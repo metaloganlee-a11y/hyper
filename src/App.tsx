@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { LogoSVG, LogoText } from './components/Logo';
+import { PartnerCarousel } from './components/PartnerCarousel';
 import { motion } from 'motion/react';
 import { 
   Shield, 
@@ -986,7 +987,7 @@ export default function App() {
               Privacy-First AI Safety Infrastructure <br className="hidden md:block" />for Continuous Care
             </h1>
             <p className="text-lg md:text-xl text-blue-600 font-semibold mb-8">
-              프라이버시 최우선의 비광학 엣지 AI 인프라
+              프라이버시 최우선의 비영상 엣지 AI 인프라
             </p>
             
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-2 max-w-3xl mx-auto font-normal">
@@ -1012,8 +1013,10 @@ export default function App() {
         </div>
       </section>
 
+      <PartnerCarousel />
+
       {/* Problem Section */}
-      <section id="about" className="py-24 bg-white border-y border-slate-200">
+      <section id="about" className="py-24 bg-white border-b border-slate-200">
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -1089,7 +1092,7 @@ export default function App() {
                 <div>
                   <div className="text-2xl font-bold text-blue-400">Zero</div>
                   <div className="text-xs text-slate-500 font-semibold uppercase tracking-wider mt-1">Camera Traps</div>
-                  <div className="text-[10px] text-slate-400 mt-0.5">완전 비광학 실시간 보호</div>
+                  <div className="text-[10px] text-slate-400 mt-0.5">완전 비영상 실시간 보호</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-purple-400">Under 3s</div>
@@ -1131,7 +1134,7 @@ export default function App() {
             </h2>
             <p className="text-blue-600 font-semibold mb-6">
               의료돌봄의 혁명 <br className="hidden md:block" />
-              개인정보보호와 환자의 인권을 지켜주는 비광학 엣지 AI 센싱기술
+              개인정보보호와 환자의 인권을 지켜주는 비영상 엣지 AI 센싱기술
             </p>
             <p className="text-base text-slate-700 leading-relaxed mb-1">
               Analyze the inner signal flow from physical antenna ADC capture to edge sLLM reasoning steps. Interact with the live telemetry controls to observe structural algorithm adaptation.
@@ -1837,7 +1840,7 @@ export default function App() {
                 <RadioReceiver className="w-8 h-8 text-blue-600" />
               </div>
               <h4 className="text-lg font-bold text-slate-900 mb-2">Signal-Based</h4>
-              <p className="text-xs text-slate-500">신호 기반 비광학 센싱</p>
+              <p className="text-xs text-slate-500">신호 기반 비영상 센싱</p>
             </div>
 
             <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200 text-center">
@@ -1922,7 +1925,7 @@ export default function App() {
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8, ease: "easeOut" }} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Ready to transform your care infrastructure?</h2>
-            <p className="text-slate-400 text-sm md:text-base mb-4">차세대 비광학 무선 레이더 센서 기반 대단위 돌봄 안전 보호 솔루션을 도입해보세요.</p>
+            <p className="text-slate-400 text-sm md:text-base mb-4">차세대 비영상 무선 레이더 센서 기반 대단위 돌봄 안전 보호 솔루션을 도입해보세요.</p>
             <p className="text-emerald-400 font-semibold text-base mb-10">하이퍼네트워크는 국가대표 AI와 국가차원 실버케어 정책과 함께 합니다.</p>
             <a href="mailto:hypernetwork.co.kr@gmail.com" className="inline-block bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-blue-900/50">
               E-mail : hypernetwork.co.kr@gmail.com
