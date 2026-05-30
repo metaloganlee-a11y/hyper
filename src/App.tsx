@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { LogoSVG, LogoText } from './components/Logo';
 import { motion } from 'motion/react';
 import { 
   Shield, 
@@ -904,11 +905,9 @@ export default function App() {
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            <a href="#" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <Activity className="text-white w-5 h-5" />
-              </div>
-              <span className="font-bold text-xl tracking-tight text-slate-900">HYPER Network</span>
+            <a href="#" className="flex items-center gap-3">
+              <LogoSVG className="w-8 h-8 md:w-10 md:h-10" />
+              <LogoText className="text-xl md:text-2xl" />
             </a>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -1932,8 +1931,8 @@ export default function App() {
           
           <div className="mt-20 pt-8 border-t border-slate-800 text-sm text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <Activity className="w-5 h-5 text-slate-600" />
-              <span className="font-bold text-slate-400">HYPER Network</span>
+              <LogoSVG className="w-6 h-6 grayscale opacity-80" />
+              <LogoText className="text-lg opacity-80" light={true} />
             </div>
             <p>© {new Date().getFullYear()} HYPER Network Co., Ltd. All rights reserved.</p>
             <p className="text-slate-600">Seoul, South Korea | 한양대학교 기술지주회사 투자 유치사</p>
