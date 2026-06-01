@@ -96,7 +96,7 @@ export default function Company() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 md:pt-48 md:pb-24 bg-white border-b border-slate-200 overflow-hidden w-full">
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-white border-b border-slate-200 overflow-hidden w-full">
         {/* Typographic Edge Watermark Background */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden opacity-[0.06]">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220vw] h-[220vh] rotate-[-5deg] flex flex-col justify-center items-center">
