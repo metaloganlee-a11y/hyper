@@ -1936,7 +1936,7 @@ export default function App() {
             </a>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-16 border-t border-slate-800/60 mb-16 px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-16 border-t border-slate-800/60 mb-16 px-4 text-center">
             <div>
               <span className="block text-slate-400 font-medium mb-3 text-xs uppercase tracking-widest">(본사) GWANGJU HQ</span>
               <p className="text-slate-300 text-sm leading-relaxed font-light">광주광역시 북구 서하로 463<br/>2층 비18호</p>
