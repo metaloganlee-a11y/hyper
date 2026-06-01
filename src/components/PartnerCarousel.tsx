@@ -9,6 +9,8 @@ const row1Partners = [
   { name: 'Y&ARCHER', src: '/logos/logo5.png' },
   { name: 'Gwangju Tech Holdings', src: '/logos/logo6.png' },
   { name: 'KOPTI', src: '/logos/logo7.png' },
+  { name: 'KAIA', src: '/logos/logo20.png' },
+  { name: 'Gyeonggi Innovation Center', src: '/logos/logo21.png' },
 ];
 
 const row2Partners = [
@@ -34,7 +36,7 @@ export function PartnerCarousel() {
       <div className="absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
       
       {/* Row 1 */}
-      <div className="flex w-max animate-marquee hover:[animation-play-state:paused] items-center" style={{ animationDuration: '35s' }}>
+      <div className="flex w-max animate-marquee hover:[animation-play-state:paused] items-center" style={{ animationDuration: '36s' }}>
         {/* We duplicate the array to visually loop indefinitely */}
         <div className="flex px-3 gap-6">
           {row1Partners.map((partner, i) => (
@@ -58,7 +60,7 @@ export function PartnerCarousel() {
 
       {/* Row 2 */}
       {/* By using animate-marquee reverse, we make it flow backwards or we can use animate-marquee-reverse */}
-      <div className="flex w-max animate-marquee-reverse hover:[animation-play-state:paused] items-center" style={{ animationDuration: '60s' }}>
+      <div className="flex w-max animate-marquee-reverse hover:[animation-play-state:paused] items-center" style={{ animationDuration: '48s' }}>
         <div className="flex px-3 gap-6">
           {row2Partners.map((partner, i) => (
             <div key={`r2-a-${i}`} className="flex-none">
