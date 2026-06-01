@@ -993,7 +993,9 @@ export default function App() {
             </p>
             
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-2 max-w-3xl mx-auto font-normal">
-              Camera-free, regulation-ready monitoring for healthcare and care environments. Seamlessly merging 60GHz MIMO radar arrays with on-device sLLM diagnostic reasoning.
+              Camera-free, regulation-ready monitoring for healthcare and care environments. <br />
+              Seamlessly merging 60GHz MIMO radar arrays <br />
+              with on-device sLLM diagnostic reasoning.
             </p>
             <p className="text-sm md:text-base text-slate-500 mb-12">
               의료 및 요양 환경을 위한 카메라 없는 규제 준수 모니터링 시스템. <br className="hidden md:block" />
