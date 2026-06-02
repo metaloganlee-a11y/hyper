@@ -11,7 +11,7 @@ const historyData = [
       { month: '04', text: "2026 TIPS 선정", icon: Trophy },
       { month: '04', text: "2026 E-LIFE Challenge 창업경진대회 '선정'", icon: Trophy },
       { month: '03', text: "2026년 초기창업패키지 (딥테크 특화형) '선정'", icon: ShieldCheck },
-      { month: '03', text: "2026 초기창업패키지(딥테크) '선정'", icon: ShieldCheck },
+      { month: '03', text: "2026년 창업성공패키지 청년창업사관학교(딥테크 1기) '선정'", icon: ShieldCheck },
       { month: '02', text: "2025 GH청춘 빌드업 창업 공모전 '입상 수상'", icon: Trophy },
     ]
   },
