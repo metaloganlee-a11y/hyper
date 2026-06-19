@@ -36,6 +36,7 @@ import { RadarLiveSpectrum } from './components/RadarLiveSpectrum';
 import { RadarCoveragePlanner } from './components/RadarCoveragePlanner';
 import { EdgeAIModelSandbox } from './components/EdgeAIModelSandbox';
 import { TechStackToggle } from './components/TechStackToggle';
+import { MetricsChart } from './components/MetricsChart';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -809,31 +810,35 @@ export default function App() {
               <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
                 Whether deploying 50 units in an assisted living facility or scaling to 10,000 sensors across a nationwide smart hospital network, our deeply optimized architecture ensures effortless fleet management, low latency bandwidth, and out-of-the-box integration capabilities.
               </p>
-              <p className="text-slate-500 text-xs md:text-sm font-medium">
+              <p className="text-slate-500 text-xs md:text-sm font-medium mb-10">
                 대규모 엔터프라이즈 환경 및 고밀도 병상을 위한 시스템 통합 및 중앙 관제 아키텍처
               </p>
+              
+              {/* Technical stat bento - moved here and made smaller */}
+              <div className="flex flex-row gap-2 w-full lg:max-w-none items-stretch overflow-x-auto sm:overflow-visible no-scrollbar pb-2 sm:pb-0">
+                <div className="bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 shrink-0 basis-auto flex flex-col justify-center">
+                  <div className="text-lg xl:text-xl font-black text-slate-900 mb-0.5 whitespace-nowrap">99.99%</div>
+                  <div className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase whitespace-nowrap">SLA Uptime</div>
+                  <div className="text-[8px] sm:text-[9px] text-slate-400 mt-1 whitespace-nowrap hidden sm:block">Fault-tolerant Mesh</div>
+                </div>
+                <div className="bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 shrink-0 basis-auto flex flex-col justify-center">
+                  <div className="text-lg xl:text-xl font-black text-slate-900 mb-0.5 whitespace-nowrap">&lt; 15 KB</div>
+                  <div className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase whitespace-nowrap">Per-Event Payload</div>
+                  <div className="text-[8px] sm:text-[9px] text-slate-400 mt-1 whitespace-nowrap hidden sm:block">Ultra-low Bandwidth</div>
+                </div>
+                <div className="bg-slate-50 rounded-xl p-3 sm:p-4 border border-slate-200 flex-1 flex justify-between items-center min-w-[200px]">
+                  <div className="min-w-0 shrink">
+                    <div className="text-sm xl:text-base font-black text-slate-900 mb-0.5 truncate pr-2">Webhooks & REST APIs</div>
+                    <div className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase truncate">Legacy System Compatible</div>
+                  </div>
+                  <Workflow className="w-5 h-5 xl:w-6 xl:h-6 text-blue-500 opacity-50 shrink-0" />
+                </div>
+              </div>
             </div>
             
             <div className="lg:w-1/2 w-full">
-              {/* Technical stat bento */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200">
-                  <div className="text-2xl font-black text-slate-900 mb-1">99.99%</div>
-                  <div className="text-xs font-bold text-slate-500 uppercase">SLA Uptime</div>
-                  <div className="text-[10px] text-slate-400 mt-1">Fault-tolerant Mesh (고가용성)</div>
-                </div>
-                <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200">
-                  <div className="text-2xl font-black text-slate-900 mb-1">&lt; 15 KB</div>
-                  <div className="text-xs font-bold text-slate-500 uppercase">Per-Event Payload</div>
-                  <div className="text-[10px] text-slate-400 mt-1">Ultra-low Bandwidth (초저대역폭)</div>
-                </div>
-                <div className="bg-slate-50 rounded-2xl p-5 border border-slate-200 col-span-2 flex justify-between items-center">
-                  <div>
-                    <div className="text-lg font-black text-slate-900 mb-1">Webhooks & REST APIs</div>
-                    <div className="text-xs font-bold text-slate-500 uppercase">Legacy System Compatible</div>
-                  </div>
-                  <Workflow className="w-8 h-8 text-blue-500 opacity-50" />
-                </div>
+              <div className="mt-2 md:mt-0">
+                <MetricsChart />
               </div>
             </div>
           </div>
