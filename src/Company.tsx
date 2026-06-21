@@ -1,14 +1,54 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { LogoSVG, LogoText } from './components/Logo';
-import { Menu, X, ArrowLeft, MapPin, Building2, Trophy, Handshake, ShieldCheck, Flag } from 'lucide-react';
+import { Menu, X, ArrowLeft, MapPin, Building2, Trophy, Handshake, ShieldCheck, Flag, ArrowUpRight } from 'lucide-react';
+
+const pressData = [
+  {
+    date: '2026.06.08',
+    publisher: '라포르시안',
+    title: 'AI의료헬스케어연구원, 고령자 돌봄 ‘능동형 생활 지원’ 표준화 논의',
+    url: 'https://www.rapportian.com/news/articleView.html?idxno=236801'
+  },
+  {
+    date: '2026.05.29',
+    publisher: '전자신문',
+    title: '하이퍼네트워크, AI 비접촉 헬스케어 모니터링으로 돌봄 혁신 나서',
+    url: 'https://www.etnews.com/20260529000335'
+  },
+  {
+    date: '2025.12.17',
+    publisher: '환경일보',
+    title: '과천시, ‘창업 네트워킹 데이’ 개최',
+    url: 'https://www.hkbs.co.kr/news/articleView.html?idxno=813486'
+  },
+  {
+    date: '2025.12.14',
+    publisher: '한경매거진',
+    title: '차세대 디지털 헬스케어 관제 시스템 ‘HYPER-Agent’ 개발하는 ‘하이퍼네트워크’',
+    url: 'https://magazine.hankyung.com/job-joy/article/202512141831d'
+  },
+  {
+    date: '2025.08.14',
+    publisher: '서울신문',
+    title: '하이퍼네트워크, 고령화 시대 비접촉 헬스케어로 돌봄 혁신 이끌어',
+    url: 'https://www.seoul.co.kr/news/economy/2025/08/14/20250814500034'
+  },
+  {
+    date: '2025.06.12',
+    publisher: '플래텀',
+    title: '한국여성벤처협회, 예비창업자 60명 대상 ‘MEET-UP’ 개최',
+    url: 'https://platum.kr/archives/263105'
+  }
+];
 
 const historyData = [
   {
     year: '2026',
     items: [
+      { month: '07', text: '제27회 여성창업경진대회 "중소벤처기업부 장관상" 수상', icon: Trophy },
       { month: '04', text: "제18회 기보벤처캠프 '선정'", icon: Trophy },
-      { month: '04', text: "2026 TIPS 선정", icon: Trophy },
+      { month: '04', text: "2026 TIPS '선정'", icon: Trophy },
       { month: '04', text: "2026 E-LIFE Challenge 창업경진대회 '선정'", icon: Trophy },
       { month: '03', text: "2026년 초기창업패키지 (딥테크 특화형) '선정'", icon: ShieldCheck },
       { month: '03', text: "2026년 창업성공패키지 청년창업사관학교(딥테크 1기) '선정'", icon: ShieldCheck },
@@ -177,6 +217,48 @@ export default function Company() {
                   ))}
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Press Section */}
+      <section className="py-32 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-16">
+            <h2 className="text-4xl font-semibold tracking-tight text-slate-900 mb-4">Press & Media</h2>
+            <p className="text-lg text-slate-500 font-light">하이퍼네트워크가 만들어가는 혁신의 기록입니다.</p>
+          </div>
+
+          <div className="border-t border-slate-200">
+            {pressData.map((article, idx) => (
+              <motion.a 
+                key={idx}
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                className="group flex flex-col md:flex-row py-8 border-b border-slate-100 hover:border-slate-200 transition-colors duration-300 relative"
+              >
+                {/* Subtle highlight background */}
+                <div className="absolute inset-0 bg-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -mx-6 px-6 rounded-2xl z-0 pointer-events-none"></div>
+                
+                <div className="relative z-10 md:w-1/4 flex flex-row md:flex-col gap-4 md:gap-1.5 mb-3 md:mb-0 shrink-0">
+                  <span className="text-blue-600 font-bold text-sm tracking-wide">{article.publisher}</span>
+                  <span className="text-slate-400 font-mono text-sm">{article.date}</span>
+                </div>
+                <div className="relative z-10 md:w-3/4 flex justify-between items-start gap-6">
+                  <h3 className="text-lg md:text-xl font-medium text-slate-800 group-hover:text-blue-600 transition-colors leading-snug break-keep">
+                    {article.title}
+                  </h3>
+                  <div className="flex-shrink-0 text-slate-300 group-hover:text-blue-500 transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 mt-1">
+                    <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
+                  </div>
+                </div>
+              </motion.a>
             ))}
           </div>
         </div>

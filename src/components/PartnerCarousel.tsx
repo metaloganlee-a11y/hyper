@@ -1,7 +1,9 @@
 import React from 'react';
 import { Building2, Landmark, ShieldCheck, Activity, Cpu, Network, Database, Lock, Hospital, Users, Briefcase, Stethoscope } from 'lucide-react';
 
-const row1Partners = [
+type Partner = { name: string; src?: string; CustomLogo?: React.FC };
+
+const row1Partners: Partner[] = [
   { name: 'HYU Holdings', src: '/logos/logo1.png' },
   { name: 'TIPS Korea', src: '/logos/logo2.png' },
   { name: 'Incheon Center', src: '/logos/logo3.png' },
@@ -10,10 +12,11 @@ const row1Partners = [
   { name: 'Gwangju Tech Holdings', src: '/logos/logo6.png' },
   { name: 'KOPTI', src: '/logos/logo7.png' },
   { name: 'KAIA', src: '/logos/logo20.png' },
+  { name: 'Seoul CCEI', src: '/logos/logo22.png' },
   { name: 'Gyeonggi Innovation Center', src: '/logos/logo21.png' },
 ];
 
-const row2Partners = [
+const row2Partners: Partner[] = [
   { name: 'Gyeonggi Transport', src: '/logos/logo8.png' },
   { name: 'Gyeonggi Housing', src: '/logos/logo9.png' },
   { name: 'Yangju City', src: '/logos/logo10.png' },
@@ -41,18 +44,30 @@ export function PartnerCarousel() {
         <div className="flex px-3 gap-6">
           {row1Partners.map((partner, i) => (
             <div key={`r1-a-${i}`} className="flex-none">
-              <div className="flex items-center justify-center gap-3 bg-white px-6 py-4 w-48 h-20 rounded-2xl shadow-sm border border-slate-100 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:-translate-y-1">
-                <img src={partner.src} alt={partner.name} className="max-w-full max-h-full object-contain" />
-              </div>
+              {partner.CustomLogo ? (
+                <div className="flex items-center justify-center bg-white px-2 py-4 w-48 h-20 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 transform hover:-translate-y-1">
+                  <partner.CustomLogo />
+                </div>
+              ) : (
+                <div className="flex items-center justify-center gap-3 bg-white px-6 py-4 w-48 h-20 rounded-2xl shadow-sm border border-slate-100 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:-translate-y-1">
+                  <img src={partner.src} alt={partner.name} className="max-w-full max-h-full object-contain" />
+                </div>
+              )}
             </div>
           ))}
         </div>
         <div className="flex px-3 gap-6" aria-hidden="true">
           {row1Partners.map((partner, i) => (
             <div key={`r1-b-${i}`} className="flex-none">
-              <div className="flex items-center justify-center gap-3 bg-white px-6 py-4 w-48 h-20 rounded-2xl shadow-sm border border-slate-100 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:-translate-y-1">
-                <img src={partner.src} alt={partner.name} className="max-w-full max-h-full object-contain" />
-              </div>
+              {partner.CustomLogo ? (
+                <div className="flex items-center justify-center bg-white px-2 py-4 w-48 h-20 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300 transform hover:-translate-y-1">
+                  <partner.CustomLogo />
+                </div>
+              ) : (
+                <div className="flex items-center justify-center gap-3 bg-white px-6 py-4 w-48 h-20 rounded-2xl shadow-sm border border-slate-100 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:-translate-y-1">
+                  <img src={partner.src} alt={partner.name} className="max-w-full max-h-full object-contain" />
+                </div>
+              )}
             </div>
           ))}
         </div>

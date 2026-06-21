@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 import { PageSkeleton } from './PageSkeleton';
 
-export function PageWrapper({ children }: { children: React.ReactNode }) {
+export function PageWrapper({ children }: { children: ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
 
