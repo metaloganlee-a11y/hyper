@@ -9,8 +9,8 @@ export function Footer() {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-3">Ready to transform your care infrastructure?</h2>
           <p className="text-slate-400 text-sm md:text-base mb-4">차세대 비영상 무선 레이더 센서 기반 대단위 돌봄 안전 보호 솔루션을 도입해보세요.</p>
           <p className="text-emerald-400 font-semibold text-base mb-10">하이퍼네트워크는 국가대표 AI와 국가차원 실버케어 정책과 함께 합니다.</p>
-          <a href="mailto:hypernetwork.co.kr@gmail.com" className="inline-block bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-blue-900/50">
-            E-mail : hypernetwork.co.kr@gmail.com
+          <a href="mailto:dr.hyper@hypernetwork.co.kr" className="inline-block bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-blue-900/50">
+            E-mail : dr.hyper@hypernetwork.co.kr
           </a>
         </div>
         
